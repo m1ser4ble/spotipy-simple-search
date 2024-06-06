@@ -24,6 +24,7 @@ jobs:
         run: |
           python -c 'import site; print(site.getsitepackages())'
           PYTHONPATH=`python -c 'import site; print(site.getsitepackages()[0])'`
+          ls ${PYTHONPATH}
           which python
           which pip
           which pylint
