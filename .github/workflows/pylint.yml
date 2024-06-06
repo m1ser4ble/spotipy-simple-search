@@ -22,8 +22,9 @@ jobs:
           pip install pylint
       - name: Analysing the code with pylint
         run: |
-          python -c 'import site; print(site.getsitepackages())'
-          PYTHONPATH=`python -c 'import site; print(site.getsitepackages()[0])'`
+          PYTHON=`poetry env info | grep -ie "executable:.*spotipyss" | awk '{print $2}'`
+          ${PYTHON} -c 'import site; print(site.getsitepackages())'
+          PYTHONPATH=`${PYTHON} -c 'import site; print(site.getsitepackages()[0])'`
           ls ${PYTHONPATH}
           which python
           which pip
