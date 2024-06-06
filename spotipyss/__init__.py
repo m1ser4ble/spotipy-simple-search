@@ -42,10 +42,10 @@ def get_most_matched(items, target_track, target_artist):
         metrics = [jaro_metric, substr]
         track_matched = any(metric(track_name, target_track) for metric in metrics)
         if track_matched:
-            # for token in target_artist.split():
-            #    artist_matched = any(metric(artist, target_artist) for metric in metrics)
-            #    if artist_matched:
-            return track
+            for token in target_artist.split():
+                artist_matched = any(metric(token, target_artist) for metric in metrics)
+                if artist_matched:
+                    return track
 
     return None
 

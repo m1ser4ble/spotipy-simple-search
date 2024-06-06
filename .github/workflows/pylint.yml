@@ -22,5 +22,8 @@ jobs:
           pip install pylint
       - name: Analysing the code with pylint
         run: |
+          which python
+          which pip
+          which pylint
           export PYTHONPATH=`which python`
           pylint $(git ls-files '*.py')
