@@ -2,7 +2,7 @@ name: Unittest
 
 on:
   pull_request:
-    types: [opened, push, reopened]
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
