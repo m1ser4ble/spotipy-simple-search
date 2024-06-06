@@ -25,5 +25,4 @@ jobs:
           which python
           which pip
           which pylint
-          export PYTHONPATH=`which python`
           pylint $(git ls-files '*.py')
