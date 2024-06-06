@@ -82,7 +82,7 @@ class SpotipySS:
 
 class Track:
     """Helper class for tracks"""
-    
+
     def __init__(self, track_json):
         self._json = track_json
 
