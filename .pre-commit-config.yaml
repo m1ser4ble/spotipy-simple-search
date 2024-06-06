@@ -20,3 +20,12 @@ repos:
     rev: "v3.0.3"
     hooks:
       - id: prettier
+
+  - repo: https://github.com/pycqa/pylint
+    rev: "v3.2.0"
+    hooks:
+      - id: pylint
+        args:
+          - --max-line-length=100
+          - --ignore-imports=yes
+          - -d duplicate-code

@@ -23,4 +23,6 @@ jobs:
           poetry install
       - name: Run Test
         run: |
-          poetry run pytest --id=${{secrets.SPOTIPY_CLIENT_ID}} --secrets=${{secrets.SPOTIPY_CLIENT_SECRET}} -s
+          which python
+          which pip
+          poetry run pytest --id=${{secrets.SPOTIPY_CLIENT_ID}} --secret=${{secrets.SPOTIPY_CLIENT_SECRET}} -s
