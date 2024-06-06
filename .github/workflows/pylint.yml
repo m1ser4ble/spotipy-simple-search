@@ -19,15 +19,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install poetry
           poetry install
-          pip install pylint
       - name: Analysing the code with pylint
         run: |
-          PYTHON=`poetry env info | grep -ie "executable:.*spotipyss" | awk '{print $2}'`
-          ${PYTHON} -c 'import site; print(site.getsitepackages())'
-          PYTHONPATH=`${PYTHON} -c 'import site; print(site.getsitepackages()[0])'`
-          ls ${PYTHONPATH}
-          which python
-          which pip
-          which pylint
-          pylint --version
-          pylint $(git ls-files '*.py')
+          poetry run pylint --version
+          poetry run pylint $(git ls-files '*.py')
