@@ -25,4 +25,5 @@ jobs:
           which python
           which pip
           which pylint
+          pylint --version
           pylint $(git ls-files '*.py')
