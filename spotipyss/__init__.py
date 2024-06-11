@@ -59,12 +59,11 @@ def get_most_matched(items, target_track, target_artist):
 
 class SpotipySS:
     """Spotipy Wrapper for simple search"""
-
+    # pylint: disable=too-few-public-methods
     def __init__(self, client_id=None, client_secret=None, language="ko"):
         self._sp = spotipy.Spotify(
-            auth_manager=SpotifyClientCredentials(
-                client_id=client_id, client_secret=client_secret
-            ),
+            auth_manager=SpotifyClientCredentials(client_id=client_id,
+                                                  client_secret=client_secret),
             language=language,
         )
 
