@@ -1,12 +1,12 @@
+"""conftest for pytest"""
 import pytest
 
 
 def pytest_addoption(parser):
     """option setting for pytest"""
     parser.addoption("--id", action="store", default="client id for spotipy")
-    parser.addoption("--secret",
-                     action="store",
-                     default="client secret for spotipy")
+    parser.addoption("--secret", action="store", default="client secret for spotipy")
+
 
 # pylint: disable=redefined-builtin
 @pytest.fixture(scope="session")

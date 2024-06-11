@@ -1,6 +1,6 @@
 """Spotipy Simple Search"""
 import spotipy
-import jellyfish
+from jellyfish import jaro_similarity
 
 
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -29,7 +29,7 @@ def gen_tokenized_queries(track, artist):
 
 def jaro_metric(lhs, rhs):
     """Returns if two strings are same in meaning by jaro metric"""
-    return jellyfish.jaro_similarity(lhs, rhs) >= 0.9
+    return jaro_similarity(lhs, rhs) >= 0.9
 
 
 def substr(lhs, rhs):
@@ -59,11 +59,13 @@ def get_most_matched(items, target_track, target_artist):
 
 class SpotipySS:
     """Spotipy Wrapper for simple search"""
+
     # pylint: disable=too-few-public-methods
     def __init__(self, client_id=None, client_secret=None, language="ko"):
         self._sp = spotipy.Spotify(
-            auth_manager=SpotifyClientCredentials(client_id=client_id,
-                                                  client_secret=client_secret),
+            auth_manager=SpotifyClientCredentials(
+                client_id=client_id, client_secret=client_secret
+            ),
             language=language,
         )
 
