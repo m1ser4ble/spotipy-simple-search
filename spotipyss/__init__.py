@@ -48,8 +48,9 @@ def get_most_matched(items, target_track, target_artist):
         metrics = [jaro_metric, substr]
         track_matched = any(metric(track_name, target_track) for metric in metrics)
         if track_matched:
+            track_artist = track["artists"][0]["name"].lower()
             for token in target_artist.split():
-                artist_matched = any(metric(token, target_artist) for metric in metrics)
+                artist_matched = any(metric(token, track_artist) for metric in metrics)
                 if artist_matched:
                     return track
 
@@ -67,11 +68,11 @@ class SpotipySS:
             language=language,
         )
 
-    def search(self, track=None, artist=None):
+    def search(self, track=None, artist=None, market="KR"):
         """Returns the most matching track by track name and artist"""
         queries = gen_tokenized_queries(track, artist)
         for query in queries:
-            items = self._sp.search(query, limit=20)
+            items = self._sp.search(query, limit=20, market=market)
             res = get_most_matched(items, track, artist)
             if res is not None:
                 break
