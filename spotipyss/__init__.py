@@ -1,6 +1,6 @@
 """Spotipy Simple Search"""
 import spotipy
-from jellyfish import jaro_similarity
+from jellyfish import _rustyfish as jf
 
 
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -29,7 +29,7 @@ def gen_tokenized_queries(track, artist):
 
 def jaro_metric(lhs, rhs):
     """Returns if two strings are same in meaning by jaro metric"""
-    return jaro_similarity(lhs, rhs) >= 0.9
+    return jf.jaro_similarity(lhs, rhs) >= 0.9
 
 
 def substr(lhs, rhs):
