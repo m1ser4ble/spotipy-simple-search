@@ -19,11 +19,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install poetry
           poetry install
-          pip install pylint
+          poetry run pip install pylint
       - name: Analysing the code with pylint
         run: |
-          which python
-          which pip
-          which pylint
-          pylint --version
-          pylint $(git ls-files '*.py')
+          poetry run pylint --version
+          poetry run pylint $(git ls-files '*.py')

@@ -22,6 +22,16 @@ _KEY_TO_URI = (
             "https://open.spotify.com/track/5NqGfELjcdvRIUuhgZJ34W",
         },
     ),
+    # (
+    #    ("파이팅 해야지 (Feat. 이영지)", "부석순 (SEVENTEEN)"),
+    #    {
+    #
+    #    }
+    # ),
+    (
+        ("나는 아픈 건 딱 질색이니까", "(여자)아이들"),
+        {"https://open.spotify.com/track/5kt0nWRnFWEeBUyLWSYnkd"},
+    ),
 )
 
 

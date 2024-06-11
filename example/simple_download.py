@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+"""simple example for usage"""
 import argparse
 import spotipyss
 
 
 def search():
+    """simple search func"""
     parser = argparse.ArgumentParser(
         prog="simple_download",
         description="simple download from spotify with track name and artist name.",
@@ -27,8 +28,8 @@ def search():
     track = args.track
     artist = args.artist
 
-    client_id = "b00a0d09652b4e1083850f6222ac8df3"
-    client_secret = "f1a5696d83554e27a280b1e09b1429ce"
+    client_id = "1"
+    client_secret = "2"
 
     ss = spotipyss.SpotipySS(
         client_id=client_id,
@@ -36,8 +37,8 @@ def search():
     )
     track = ss.search(track, artist)
 
-    print(f'album_name : {track['album']['name']}')
-    print(f'uri : {track['external_urls']['spotify']}')
+    print(f"album_name : {track.album_name()}")
+    print(f"uri : {track.spotify_uri()}")
 
 
 if __name__ == "__main__":
