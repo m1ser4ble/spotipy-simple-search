@@ -99,3 +99,7 @@ class Track:
     def album_name(self):
         """Returns album name of this track"""
         return self._json["album"]["name"]
+
+    def name(self):
+        """Returns track name"""
+        return self._json["name"]

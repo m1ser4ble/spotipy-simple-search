@@ -33,7 +33,7 @@ _KEY_TO_URI = (
         {"https://open.spotify.com/track/5kt0nWRnFWEeBUyLWSYnkd"},
     ),
     (("취중고백", "김민석"), {"https://open.spotify.com/track/0hqngwyh8WnPuYlLYHRQqp"}),
-    #(("그대가 내 안에 박혔다(그내박)", "순순희(기태)"), {}),
+    # (("그대가 내 안에 박혔다(그내박)", "순순희(기태)"), {}),
     (
         ("손오공", "세븐틴 (SEVENTEEN)"),
         {"https://open.spotify.com/track/3AOf6YEpxQ894FmrwI9k96"},
