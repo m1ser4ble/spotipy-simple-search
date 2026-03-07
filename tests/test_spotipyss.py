@@ -42,6 +42,7 @@ _KEY_TO_URI = (
         ("첫 만남은 계획대로 되지 않아", "TWS (투어스)"),
         {"https://open.spotify.com/track/0aZG8KWrpRnsGL0loUkfSj"},
     ),
+    (("Who’s Afraid of Little Old Me?", "Taylor Swift"), {""}),
 )
 
 

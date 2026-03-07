@@ -49,6 +49,7 @@ def get_most_matched(items, target_track, target_artist):
 
         metrics = [jaro_metric, substr]
         track_matched = any(metric(track_name, target_track) for metric in metrics)
+        breakpoint()
 
         if track_matched or first_element:
             track_artist = track["artists"][0]["name"].lower()
